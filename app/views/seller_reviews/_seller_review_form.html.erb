@@ -1,0 +1,7 @@
+<%= form_for @seller_review, url: transaction_seller_reviews_path(params[:transaction_id]) do |f| %>
+  <p><%= f.label 'Leave a rating out of 5' %></p>
+  <p><%= f.text_field :rate_seller, class: "form-control"%></p>
+  <p><%= f.label 'Leave some feedback' %></p>
+  <p><%= f.text_area :seller_review_content, class: "form-control" %></p>
+  <%= f.submit "Submit Review", class:"btn btn-primary" %>
+<% end %> 

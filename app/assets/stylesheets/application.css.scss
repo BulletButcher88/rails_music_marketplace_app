@@ -1,0 +1,157 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "buyer_reviews.scss";
+@import "categories.scss";
+@import "charges.scss";
+@import "item_review.scss";
+@import "items.scss";
+@import "navigation.scss";
+@import "seller_reviews.scss";
+@import "transactions.scss";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// footer background color
+.bg-color {
+    background: #2B2B2B;
+    color: white;
+}
+
+// navigation background color
+.nav-bg-color {
+    background-color: #fff;
+}
+
+// all anchor tags
+a {
+    text-decoration: none;
+}
+
+// dynamic images from s3 bucket displaying horizontallly using flexbox 
+.random-img-container {
+    height: calc(100vh-100px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+//random images margin right is 5px
+.mgn-rt {
+    margin: 5px;
+}
+
+// form submit button left align
+.label-left {
+    float: left;
+}
+
+//margin bottom under the navigation
+.mg-bt {
+    margin-bottom: 10px;
+}
+
+// google font used in our app
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+//navigation link color is white
+.nav-link {
+    color: black;
+}
+
+//navigation arrow moved right 
+.push-right {
+    margin-left: 700px;
+}
+
+//nav arrow is white
+.nav.push-right li a {
+    color: black;
+}
+
+//dropdown navigation text is black
+.nav.push-right li a.text {
+    color: black;
+}
+
+//on hover nav-link color is white
+a.nav-link:hover {
+    color: #000;
+}
+
+.dropdown-menu.text {
+    color: black;
+}
+
+.mg-bt {
+    margin-bottom: 2px;
+}
+
+.icon-style {
+    font-size: 20px;
+    padding-left: 2px;
+}
+
+.nav-shadow {
+    height: 100px;
+    width: 1110px;
+    margin: 0px 0 20px 0;
+    box-shadow: 0 10px 20px #333;
+}
+
+.rm-pd {
+    padding: 0px;
+}
+
+.align-name {
+    padding-top: 5px;
+}
+
+.category-list {
+    height: calc(100vh-100px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-card {
+    margin: 5px;
+    width: 25vw;
+    height: 350px;
+}
+
+.category-card-img-container {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(233, 233, 233);
+}
+
+.my-card-img-top {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.my-card-body {
+    text-align: center;
+}

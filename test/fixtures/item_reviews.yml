@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_review_content: MyString
+  rate_item: 1.5
+  user: one
+  item: one
+
+two:
+  item_review_content: MyString
+  rate_item: 1.5
+  user: two
+  item: two

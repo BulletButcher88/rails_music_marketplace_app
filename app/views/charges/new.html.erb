@@ -1,0 +1,30 @@
+<div class="transaction-container">
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md">
+        <%= image_tag @item.picture, class: "card-img" if @item.picture.attached?  %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title"><%= @item.name %></h3>
+          <p class="card-text">
+            <p><%= @transaction.item.description %></p>
+            <h2>$<%= number_with_precision(@transaction.total, :precision => 2, :delimiter => ',') %></h3>
+            <p>Seller <%= @transaction.seller.username %></p>
+            <p><%= @transaction.seller.email %></p>
+            <% if @transaction.pick_up? == true %>
+              <p><%= @transaction.pick_up_address %></p>
+            <% end %>
+            <%= render "layouts/shared/stripe_form" %>
+          </p>
+          <%= link_to "Cancel", root_path %>
+
+        </div>
+      </div>
+    </div> 
+  </div>  
+</div> 
+  
+  
+  
+    

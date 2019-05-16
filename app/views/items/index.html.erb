@@ -1,0 +1,20 @@
+<div class="category-container">
+  <div class="category-list">
+    <% @random_items.each_with_index do |item, index| %>
+      <%= link_to item_path(item), style: "text-decoration: none; color: black;", class: "category-card" do %>
+        <div class="card category-card">
+          <div class="card-img-top category-card-img-container">
+            <%= image_tag item.picture, class: "my-card-img-top" if item.picture.attached? %>
+          </div>
+          <div class="card-body my-card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text">
+              <h3>$<%= number_with_precision(item.price, :precision => 2, :delimiter => ',') %></h3>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>

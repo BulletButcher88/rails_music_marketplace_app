@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsMarketplaceApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Montserrat' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# Jquery ??  %>
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render :partial => 'layouts/shared/navigation'%>  
+      <%= yield %>
+    </div>
+  </body>
+</html>

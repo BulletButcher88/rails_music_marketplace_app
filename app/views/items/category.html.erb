@@ -1,0 +1,11 @@
+<h1 class="category-heading">category</h1>
+<div class="category-list">
+
+	<% @category.each_with_index do |category, index| %>   
+	
+  	<div class=category-card>
+        <h2><%= category.item_category %></h2>
+    		<%=link_to 'SELECT >', category_path(id) %>
+    </div> 
+  	<% end %>
+</div>

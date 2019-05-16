@@ -1,0 +1,63 @@
+    <%= form_for @item do |f| %>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :Name %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :name, name: 'name', class: "form-control", placeholder: "Name", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :Category %>
+        </div>
+        <div class="form-group">
+        <%= select_tag "category_id", options_from_collection_for_select(@categories, "id", "item_category"), class: "form-control" %></div>
+        </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :Price %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :price, name: 'price', class: "form-control", placeholder: "price" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :Number_of_items %>
+        </div>
+        <div class="">
+          <%= f.text_field :number_in_stock, class: "form-control", placeholder: "items in stock" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :Description%>
+        </div>
+        <div class="">
+          <%= f.text_field :description, name: 'description', class: "form-control", placeholder: "description" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :Condition%>
+        </div>
+        <div class="">
+          <%= f.text_field :condition, name: 'condition', class: "form-control", placeholder: "condition" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :upload_Image %>
+        </div>
+        <div class="">
+          <%= f.file_field :picture, name: 'picture' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.submit class: 'btn btn-primary btn-large'%>
+        </div>
+      </div>
+  <% end %>

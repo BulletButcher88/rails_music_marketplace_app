@@ -1,0 +1,21 @@
+<h3>Edit Review</h3>
+    <% if cannot? :update, @item %>
+      <p>Please create an account</p>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    <% end  %>
+    <% if can? :update, @item %>
+      <form action="<%= item_item_review_path(params[:item_id]) %>" method="POST" >
+      <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+      <input type="hidden" name="_method" value="patch" />
+      <input type="hidden" value="<%= @item_review.id %>" name="item_id" />
+      
+      <label> Rate Item</label>
+      <input type="text" name="rate_item" id="rating" />
+
+      <label>Review Item</label>
+      <input type="text" name="item_review_content" id="item_review"/>
+
+      <input type="submit" value="Update" />
+
+    </form>
+    <% end %>

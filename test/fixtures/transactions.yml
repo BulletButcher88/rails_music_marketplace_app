@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total: 1.5
+  payment_reference: MyString
+  pick_up: false
+  delivery: false
+  pick_up_address: MyString
+  delivery_address: MyString
+  item: one
+  user: one
+
+two:
+  total: 1.5
+  payment_reference: MyString
+  pick_up: false
+  delivery: false
+  pick_up_address: MyString
+  delivery_address: MyString
+  item: two
+  user: two

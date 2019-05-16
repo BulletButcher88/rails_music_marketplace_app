@@ -1,0 +1,71 @@
+<div class="my-item-container">
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md">
+        <%= image_tag @item.picture, class: "card-img" if @item.picture.attached?  %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title"><%= @item.name %></h3>
+          <p class="card-text">
+            <h3>$<%= number_with_precision(@item.price, :precision => 2, :delimiter => ',') %></h3>
+            <p>Seller: <%= @item.user.username %></p>
+            <p><%= @average_seller_rating %> /5  seller rating </p>
+            <p>
+              <%= @item.brand %> - 
+              <%= @item.model %> - 
+              <%= @item.version %> - 
+              <%= @item.release_year %>
+            </p>
+            <p> Condition:
+              <%= @item.condition %>
+            </p>
+            <p> Description:
+              <%= @item.description %>
+            </p>
+            <% if @item.user == current_user %>
+              <p><%= link_to "Edit Item", edit_item_path(@item), class: "btn btn-primary" %></p>
+              <p><%= button_to "Delete Item", item_path(@item), class: "btn btn-primary", method: :delete %></p>  
+            <% end %>
+            <%= link_to "Back", :back %>
+
+            <% if @item.user != current_user %>
+              <p><%= link_to "Purchase", new_item_transaction_path(@item), class: "btn btn-primary" %></p>
+            <% end %>
+          </p>
+          <p>This Item: <%= @item.average_item_rating %> / 5</p>
+          <p class="card-text"><small class="text-muted"> <%= @item.number_in_stock %> in stock.</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-header card-footer">
+    Reviews
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+      
+      <ul>
+        <% @item.item_reviews.each do |review| %>
+        <li>
+          <p><%= review.item_review_content %> </p>
+          <p><%= review.rate_item %>  out of 5</p>
+          <% if can? :update, review %>          
+            <p><%= link_to "edit review", edit_item_item_review_path(@item.id, review.id), class: "btn btn-primary" %></p>
+            <p><%= button_to "delete review", item_item_review_path(@item.id, review.id),:method => "delete", class: "btn btn-primary" %></p>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </p>
+    <h3>Add a Review</h3>
+    <% if cannot? :update, @item %>
+      <p>Please login or create an account</p>
+      <p><%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %></p>
+      <p><%= link_to 'Login', new_user_session_path, class: "btn btn-primary" %></p>
+    <% end  %>
+    <% if can? :update, @item %>
+      <%= render "item_review_form" %>
+    <% end %>
+  </div>
+</div>

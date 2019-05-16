@@ -1,0 +1,36 @@
+<div class="transaction-container">
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md">
+        <%= image_tag @item.picture, class: "card-img" if @item.picture.attached?  %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">WEEEWW successful purchase</h3>
+          <p class="card-text">
+            <h2><%= @transaction.item.name %></h2>
+            <p><%= @transaction.item.description %></p>
+            <h3>$<%= number_with_precision(@transaction.total, :precision => 2, :delimiter => ',') %></h3>
+            <p><%= @transaction.seller.username %></p>
+            <p><%= @transaction.buyer.username %></p>
+            <p><% if @transaction.pick_up? == true %></p>
+              <p><%= @transaction.pick_up_address %></p>
+            <% end %>
+            <p><% if @transaction.delivery? == true %></p>
+              <h4><%= @transaction.delivery_address %></h4>
+            <% end %>
+            <h3>Add a Review</h3>
+            <% if cannot? :update, @transaction %>
+              <p>Please create an account</p>
+              <%= link_to 'Sign Up', new_user_registration_path %>
+            <% end  %>
+            <% if can? :update, @transaction %>
+              <p><%= link_to 'Review Item', item_path(@item), class: "btn btn-primary"  %></p>
+              <p><%= link_to 'Leave a Seller Review', new_transaction_seller_review_path(@transaction), class: "btn btn-primary"  %></p>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div> 
+  </div>  
+</div> 

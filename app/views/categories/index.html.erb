@@ -1,0 +1,13 @@
+
+<h1 class="category-heading">category</h1>
+<div class="category-list">
+
+	<% @categories.each do |category| %>   
+	
+  	<div class=category-card>
+        <h2><%= category.item_category %></h2>
+    		<%=link_to 'SELECT >', category_path(category.id) %>
+        <a href="https://s1192.photobucket.com/user/T2Stratman/media/ec05f909.jpg.html" target="_blank"><img src="https://i1192.photobucket.com/albums/aa328/T2Stratman/ec05f909.jpg" border="0" alt="ec05f909 photo ec05f909.jpg"></a>
+   </div> 
+  	<% end %>
+</div>

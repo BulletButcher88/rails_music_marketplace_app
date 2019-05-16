@@ -1,0 +1,21 @@
+<div class="card">
+  <h5 class="card-header">Transaction</h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= @item.name %></h5>
+    <p class="card-text">
+    <h3>$<%= number_with_precision(@item.price, :precision => 2, :delimiter => ',') %></h3>
+    <%= form_for @transaction, url: item_transactions_path do |f| %>
+      <p></p>
+      <p>Pick Up Address <%= @item.user.pick_up_address %></p>
+      <% if @item.delivery %>
+        <p>Select for delivery</p>
+        <%= f.label :delivery %>
+        <%= f.check_box :delivery %>
+        <%= f.text_field :delivery_address, class: "form-control", placeholder: "Street, Suburb, State, Country, Postcode" %>
+      <% end %>
+      <%= f.submit "Confirm, Proceed to Payment", class: "btn btn-primary" %>  
+    <% end %>
+    <%= link_to "Back", :back %>
+  </div>
+</div>
+

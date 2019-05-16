@@ -1,0 +1,172 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :username %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :username, class: "form-control", autofocus: true, autocomplete: "username" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :email %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :first_name %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :first_name , class: "form-control", autofocus: true, autocomplete: "first_name " %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :last_name %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :last_name , class: "form-control", autofocus: true, autocomplete: "last_name " %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_street %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_street , class: "form-control", autofocus: true, autocomplete: "user_billing_address_street" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_suburb %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_suburb , class: "form-control", autofocus: true, autocomplete: "user_billing_address_suburb" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_state %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_state, class: "form-control", autofocus: true, autocomplete: "user_billing_address_state" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_postcode %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_postcode, class: "form-control", autofocus: true, autocomplete: "user_billing_address_postcode" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_country %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_country, class: "form-control", autofocus: true, autocomplete: "user_billing_address_country" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_postal_address_street%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_postal_address_street, class: "form-control", autofocus: true, autocomplete: "user_postal_address_street" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_postal_address_street%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_postal_address_street, class: "form-control", autofocus: true, autocomplete: "user_postal_address_street" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_postal_address_suburb%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_postal_address_suburb, class: "form-control", autofocus: true, autocomplete: "user_postal_address_suburb" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_postal_address_state%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_postal_address_state, class: "form-control", autofocus: true, autocomplete: "user_postal_address_state" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_postal_address_postcode%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_postal_address_postcode, class: "form-control", autofocus: true, autocomplete: "user_postal_address_postcode" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_country%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_country, class: "form-control", autofocus: true, autocomplete: "user_billing_address_country" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_billing_address_street%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_billing_address_street, class: "form-control", autofocus: true, autocomplete: "user_billing_address_street" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label label-left">
+    <%= f.label :user_contact_tel_number%>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_contact_tel_number, class: "form-control", autofocus: true, autocomplete: "user_contact_tel_number" %>
+  </div>
+</div>
+
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field form-group" >
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "6 characters minimum" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<p><h3>Cancel my account</h3></p>
+
+<p>Unhappy?</p> 
+<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary' %></p>
+<%= link_to "Back", :back %></p>

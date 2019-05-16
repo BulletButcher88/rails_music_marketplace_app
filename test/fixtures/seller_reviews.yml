@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seller_review_content: MyString
+  rate_seller: 1
+  transaction: one
+  user: one
+
+two:
+  seller_review_content: MyString
+  rate_seller: 1
+  transaction: two
+  user: two

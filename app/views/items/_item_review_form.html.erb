@@ -1,0 +1,21 @@
+    <%= form_for [@item, @item_review] do |f|%>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :review_this_item %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :item_review_content, class: "form-control"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label label-left">
+          <%= f.label :rate_this_item %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :rate_item, class: "form-control"%>
+        </div>
+      </div>
+      <div class="control-label label-left">
+        <%= f.submit class: 'btn btn-primary btn-large'%>
+      </div>
+    <% end %>

@@ -1,0 +1,58 @@
+<div class="my-item-container">
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md">
+        <%= image_tag @item.picture, class: "card-img" if @item.picture.attached?  %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title"><%= @item.name %></h3>
+          <p class="card-text">
+
+    <h2><%= @transaction.item.name %></h2>
+    <p><%= @transaction.item.description %></p>
+    <h2>$<%= number_with_precision(@transaction.total, :precision => 2, :delimiter => ',') %></h3>
+    <p><%= @transaction.seller.username %></p>
+    <p><%= @transaction.buyer.username %></p>
+    
+    <p><% if @transaction.pick_up? == true %></p>
+      <p><%= @transaction.pick_up_address %></p>
+    <% end %>
+    
+    <p><% if @transaction.delivery? == true %></p>
+      <h4><%= @transaction.delivery_address %></h4>
+    <% end %>
+  
+  </div>
+  
+  <p>Payment Received</p>
+   <p class="card-text"><small class="text-muted"> <%= @item.number_in_stock %> in stock.</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-header card-footer">
+    Reviews
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+  <h3>Add a Review</h3>
+  
+  <% if cannot? :update, @transaction %>
+    <p>Please create an account</p>
+    <%= link_to 'Sign Up', new_user_registration_path %>
+  <% end  %>
+  
+  <% if can? :update, @transaction %>
+    <% if @transaction.buyer_id = @current_user_id %>
+      <p><%= link_to 'Leave a Seller Review', new_transaction_seller_review_path(@transaction) %></p>
+    <% end %>
+    <% if @transaction.seller_id = @current_user_id %>
+      <p><%= link_to 'Leave a Buyer Review',  new_transaction_buyer_review_path(@transaction) %></p>
+    <% end %>
+  <% end %>
+  <p><%= link_to 'Review Item', item_path(@item) %></p>
+<% else %>
+  <h1>Access Denied</h1>
+  <p>You are not permitted to see this page</p>
+<% end %>

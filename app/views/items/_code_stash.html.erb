@@ -1,0 +1,20 @@
+<form action="<%= item_reviews_path(params[:id]) %>" method="POST" >
+      <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+      <input type="hidden" value="<%= @item.id %>" name="item_id" />
+      <label for="user_rating">User Rating</label>
+      <input type="text" name="user_rating" id="user_rating" />
+      <label for="review">Give some Feedback for <%= @user %></label>
+      <input type="text" name="user_review_content" id="user_review"/>
+      <label for="review">Review <%= @item.name %></label>
+      <input type="text" name="item_review_content" id="item_review"/>
+      <input type="submit" value="Create" />
+    </form>
+
+            <div class="btn btn-primary">
+          <% if item.user = current_user %>
+            <%= link_to "Edit", edit_item_path(item), class: "btn" %>
+            <%= button_to "Delete Item", item_path(item), class: "btn", method: :delete %> 
+          <% end %>
+          <%= link_to "Purchase", new_item_transaction_path(item), class: "btn" %>
+
+          <p>This Item: <%= @item.average_item_rating %> / 5</p>
