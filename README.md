@@ -104,6 +104,10 @@ We set out to create a simple wireframe with the basic and UX friendly experienc
 * A Guest user can go straight to sign-up and sell and buy an item
 
 
+![](app/assets/images/2.png)
+![](app/assets/images/3.png)
+
+
  We establish a point of sale via the transaction table in the database, which links the buyer to the seller user ID. 
 
 # COLOR COLLECTING
@@ -336,7 +340,10 @@ The project was managed between the three of us via GitHub on a shared repositor
 
 
 # 18. Discuss how Agile methodology is being implemented in your project.
- Each day we had two meetings as a group and also had stand up to share progress with other classsmates. It was good to hear others work process and gain feedback on ours. As a group of three, we also had issues of all of us being able to view the laptop screen together while coding along. Mark brought in a PC monitor as a solution to this problem.
+ Each day we had two meetings as a group and also had stand up to share progress with other classsmates. It was good to hear others work process and gain feedback on ours. As a group of three, we also had issues of all of us being able to view the laptop screen together while coding along. Mark brought in a PC monitor as a solution to this problem.'
+ 
+![](app/assets/images/4.png)
+![](app/assets/images/5.png)
 
 
 # 19. Provide an overview and description of your Source control process.
