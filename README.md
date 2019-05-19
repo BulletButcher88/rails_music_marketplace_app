@@ -377,4 +377,4 @@ As mentioned above, we stored the keys locally on our computers and stored produ
 # 23.Research what your legal obligations are in relation to handling user data.
 The Australian data privacy laws aims to protext users so others cannot see others user information. Passwords are not to be visible to any users or any thrid party. 
 
-If our business model was planning to share or sell information attained, proper legal disclouser is required and published on the site.
+If our business model was planning to share or sell information attained, proper legal disclouser is required and published on the site
