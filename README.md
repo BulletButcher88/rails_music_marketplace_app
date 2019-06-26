@@ -1,6 +1,6 @@
 # README - MARKET PLACE
 
-# LINK (URL)
+# Website
 
 https://intense-garden-53703.herokuapp.com
 
