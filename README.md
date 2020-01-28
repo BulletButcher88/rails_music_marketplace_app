@@ -38,7 +38,6 @@ The user can be an individual, a retailer or a supply chain. Once the user has c
 
 # WEBSITE SCREENSHOTS
 
-![](app/assets/images/6.png)
 ![](app/assets/images/7.png)
 ![](app/assets/images/8.png)
 ![](app/assets/images/9.png)
